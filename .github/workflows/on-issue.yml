@@ -1,0 +1,23 @@
+# When a "New dataset" issue is opened/edited, write its answers into the crate's root entity.
+# The issue is the SEED on-ramp only — it sets the model-as-a-whole (root + references), never
+# per-file detail. Thin caller; logic is in the toolkit's reusable workflow.
+name: Apply dataset submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  apply:
+    # Gate on the title prefix the issue form sets ("[dataset] …") — blank issues are disabled
+    # (see ISSUE_TEMPLATE/config.yml) so every issue comes from the form and carries it. The
+    # label check is a backup for repos where the `dataset` label happens to exist.
+    if: ${{ startsWith(github.event.issue.title, '[dataset]') || contains(github.event.issue.labels.*.name, 'dataset') }}
+    uses: ModelAtlasofTheEarth/mate-toolkit/.github/workflows/build.yml@v0
+    with:
+      issue_body: ${{ github.event.issue.body }}
+      issue_number: ${{ github.event.issue.number }}
+      issue_title: ${{ github.event.issue.title }}
+    permissions:
+      contents: write
+      issues: write

@@ -1,0 +1,6 @@
+# Repo infrastructure that is present but is NOT part of the described dataset.
+# (Layered on top of .gitignore + the toolkit's hard-skips.)
+.github/
+.devcontainer/
+.mate/
+environment.yml

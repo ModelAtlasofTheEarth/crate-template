@@ -1,0 +1,67 @@
+name: New dataset
+description: Describe a dataset; an action writes it into the crate.
+title: '[dataset] '
+labels:
+- dataset
+body:
+- type: markdown
+  attributes:
+    value: Describe your dataset. On submit, an automated action writes these values
+      into the RO-Crate (`ro-crate-metadata.json`) — the single source of truth. **Edit
+      the crate afterwards (CLI / editor), not by reopening this issue.**
+- type: input
+  id: title
+  attributes:
+    label: Title
+  validations:
+    required: true
+- type: textarea
+  id: description
+  attributes:
+    label: Short description
+  validations:
+    required: true
+- type: input
+  id: license
+  attributes:
+    label: License (SPDX id or URL)
+  validations:
+    required: true
+- type: textarea
+  id: creators
+  attributes:
+    label: Creator(s) — ORCID iD or 'Family, Given'
+    description: 'One per line: an ORCID iD (e.g. 0000-0002-1270-4377), or "Family,
+      Given".'
+  validations:
+    required: true
+- type: input
+  id: keywords
+  attributes:
+    label: Keywords
+    description: Comma-separated.
+  validations:
+    required: false
+- type: input
+  id: publication
+  attributes:
+    label: Related publication (DOI)
+  validations:
+    required: false
+- type: dropdown
+  id: payload_backend
+  attributes:
+    label: External data payload — backend (optional)
+    options:
+    - (none)
+    - git
+    - zenodo
+    - url
+  validations:
+    required: false
+- type: input
+  id: payload_ref
+  attributes:
+    label: Payload reference (e.g. Zenodo record id, or a URL)
+  validations:
+    required: false

@@ -1,0 +1,16 @@
+{
+  "name": "Dataset crate (mate toolkit)",
+  "image": "mcr.microsoft.com/devcontainers/miniconda:3",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  // Build the tracked env on create (installs the mate toolkit from git + quarto), and make
+  // new terminals open in it. Same environment.yml used locally and in CI — one definition.
+  "postCreateCommand": "conda env create -f environment.yml || conda env update -f environment.yml; grep -q 'conda activate mate' ~/.bashrc || echo 'conda activate mate' >> ~/.bashrc",
+  "postAttachCommand": "echo '\\n  Dataset crate ready. Try:\\n    mate build .      # scan the repo into the crate\\n    mate enrich .     # resolve ORCIDs / DOIs\\n    mate validate .   # check it\\n    mate render . -o _site\\n'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

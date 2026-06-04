@@ -1,0 +1,18 @@
+# Thin caller: all logic lives in the toolkit's reusable workflow, pinned to a version.
+# Auto-regenerates the crate on every push (the crate must track the filesystem); the manual
+# trigger is just an on-demand re-run. The toolkit's commit uses [skip ci] to avoid a loop.
+name: Build dataset crate
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "_site/**"
+      - "ro-crate-metadata.json"   # the build's own regen-commit shouldn't re-fire it
+  workflow_dispatch:
+
+jobs:
+  mate:
+    uses: ModelAtlasofTheEarth/mate-toolkit/.github/workflows/build.yml@v0
+    permissions:
+      contents: write

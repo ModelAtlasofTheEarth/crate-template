@@ -1,0 +1,17 @@
+# The dataset's tracked environment — SAME file used locally and in CI (the reusable workflow
+# loads it via micromamba), so behaviour is identical. This is the SINGLE place the toolkit
+# version is pinned (the @v0 tag); bump it here to move to a newer toolkit.
+#
+#   conda env create -f environment.yml && conda activate mate
+#   mate build . && mate validate . && mate render . -o _site
+#
+# For local dev against a checkout, install the toolkit editable instead:
+#   pip install -e ../mate-toolkit
+name: mate
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - quarto
+  - pip
+  - pip:
+      - "mate-toolkit @ git+https://github.com/ModelAtlasofTheEarth/mate-toolkit@v0"
