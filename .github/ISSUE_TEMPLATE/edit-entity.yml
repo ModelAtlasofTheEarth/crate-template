@@ -1,32 +1,54 @@
-name: New dataset
-description: Describe a dataset; an action writes it into the crate.
-title: '[dataset] '
+name: Add / edit metadata
+description: Add or edit metadata on an entity in the crate (defaults to the dataset
+  root).
+title: '[edit] '
 labels:
-- dataset
+- mate-edit
 body:
 - type: markdown
   attributes:
-    value: Describe your dataset. On submit, an automated action writes these values
-      into the RO-Crate (`ro-crate-metadata.json`) — the single source of truth. **Edit
-      the crate afterwards (CLI / editor), not by reopening this issue.**
+    value: Add or edit metadata for this dataset — or for one specific folder/file
+      in it (pick it above; leave as the root for the dataset as a whole). On submit,
+      an automated action writes your answers into the RO-Crate (`ro-crate-metadata.json`)
+      — the single source of truth. **Edit the crate afterwards (CLI / Crate-O), not
+      by reopening this issue.**
+- type: input
+  id: path
+  attributes:
+    label: Which entity to edit
+  validations:
+    required: false
+- type: dropdown
+  id: entity_type
+  attributes:
+    label: Type tag (optional — type-specific fields are edited in Crate-O)
+    options:
+    - (keep current)
+    - Dataset
+    - SoftwareSourceCode
+    - SoftwareApplication
+    - ImageObject
+    - CreativeWork
+  validations:
+    required: false
 - type: input
   id: title
   attributes:
     label: Title
   validations:
-    required: true
+    required: false
 - type: textarea
   id: description
   attributes:
     label: Short description
   validations:
-    required: true
+    required: false
 - type: input
   id: license
   attributes:
     label: License (SPDX id or URL)
   validations:
-    required: true
+    required: false
 - type: textarea
   id: creators
   attributes:
@@ -34,7 +56,7 @@ body:
     description: 'One per line: an ORCID iD (e.g. 0000-0002-1270-4377), or "Family,
       Given".'
   validations:
-    required: true
+    required: false
 - type: input
   id: keywords
   attributes:

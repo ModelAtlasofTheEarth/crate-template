@@ -1,4 +1,4 @@
-# Force submitters through the structured form (which sets the "[dataset] " title prefix the
-# build workflow gates on). A free-form blank issue wouldn't carry the prefix and would be
-# silently ignored by the pipeline — so disable it.
+# Force submitters through the structured form (which sets the "[edit] " title prefix the build
+# workflow gates on). A free-form blank issue wouldn't carry the prefix and would be silently
+# ignored by the pipeline — so disable it.
 blank_issues_enabled: false
