@@ -2,42 +2,6 @@
   "@context": "https://w3id.org/ro/crate/1.1/context",
   "@graph": [
     {
-      "@id": "./",
-      "@type": "Dataset",
-      "name": "",
-      "description": "",
-      "version": "0cb7eee",
-      "hasPart": [
-        {
-          "@id": "data/"
-        },
-        {
-          "@id": "large_data/"
-        },
-        {
-          "@id": "README.md"
-        }
-      ],
-      "dateModified": "2026-06-05T22:58:43+10:00",
-      "codeRepository": "https://github.com/ModelAtlasofTheEarth/dataset-template",
-      "dateCreated": "2026-06-04T23:32:08+10:00",
-      "datePublished": "2026-06-05T12:59:17+00:00",
-      "_git_commit": "0cb7eee02dee9037e23381668cccf39b658829b5"
-    },
-    {
-      "@id": "data/",
-      "@type": "Dataset"
-    },
-    {
-      "@id": "large_data/",
-      "@type": "Dataset"
-    },
-    {
-      "@id": "README.md",
-      "@type": "File",
-      "contentSize": 2114
-    },
-    {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
@@ -46,6 +10,12 @@
       "about": {
         "@id": "./"
       }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "",
+      "description": ""
     }
   ]
 }

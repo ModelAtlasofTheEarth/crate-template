@@ -10,10 +10,11 @@ on:
 
 jobs:
   apply:
-    # Gate on the title prefixes the two forms set ("[configure] …" / "[edit] …") — blank issues
-    # are disabled (see ISSUE_TEMPLATE/config.yml) so every issue comes from a form and carries
-    # one. The label check is a backup for repos where the `crate-edit` label happens to exist.
-    if: ${{ startsWith(github.event.issue.title, '[configure]') || startsWith(github.event.issue.title, '[edit]') || startsWith(github.event.issue.title, '[add]') || contains(github.event.issue.labels.*.name, 'crate-edit') }}
+    # The TEMPLATE itself is inert (any "-template" repo skips) so you can't edit it via issues —
+    # you must make a repo from it first. Then gate on the title prefixes the three forms set
+    # ("[configure …" / "[edit …" / "[add …"); blank issues are disabled (ISSUE_TEMPLATE/config.yml)
+    # so every issue comes from a form. The label check is a backup.
+    if: ${{ !endsWith(github.repository, '-template') && (startsWith(github.event.issue.title, '[configure') || startsWith(github.event.issue.title, '[edit') || startsWith(github.event.issue.title, '[add') || contains(github.event.issue.labels.*.name, 'crate-edit')) }}
     uses: ModelAtlasofTheEarth/crate-kit/.github/workflows/build.yml@v0
     with:
       issue_body: ${{ github.event.issue.body }}

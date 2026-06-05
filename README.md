@@ -1,4 +1,4 @@
-# Dataset crate (template)
+# Crate template
 
 A self-describing dataset repository. Its metadata lives in **`ro-crate-metadata.json`** — an
 [RO-Crate](https://www.researchobject.org/ro-crate/) built *dynamically from whatever is in

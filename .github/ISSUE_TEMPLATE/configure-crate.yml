@@ -1,6 +1,6 @@
 name: Configure dataset (the whole crate)
 description: Configure dataset (the whole crate)
-title: '[configure] '
+title: '[configure crate] '
 labels:
 - crate-edit
 body:

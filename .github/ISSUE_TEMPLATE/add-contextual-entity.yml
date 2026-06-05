@@ -1,6 +1,6 @@
 name: Add a contextual entity (a remote reference)
 description: Add a contextual entity (a remote reference)
-title: '[add] '
+title: '[add reference] '
 labels:
 - crate-edit
 body:

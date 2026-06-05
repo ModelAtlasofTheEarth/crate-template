@@ -1,7 +1,7 @@
 # Thin caller: all logic lives in the toolkit's reusable workflow, pinned to a version.
 # Auto-regenerates the crate on every push (the crate must track the filesystem); the manual
 # trigger is just an on-demand re-run. The toolkit's commit uses [skip ci] to avoid a loop.
-name: Build dataset crate
+name: Build crate
 
 on:
   push:
@@ -13,6 +13,10 @@ on:
 
 jobs:
   crate:
+    # The TEMPLATE itself is inert — it must never build/mutate its own crate; only repos made
+    # from it should. Any repo whose name ends in "-template" is treated as a template and skips.
+    # (Rename-proof: works for dataset-template / crate-template / model-template alike.)
+    if: ${{ !endsWith(github.repository, '-template') }}
     uses: ModelAtlasofTheEarth/crate-kit/.github/workflows/build.yml@v0
     permissions:
       contents: write
