@@ -10,3 +10,6 @@ ro-crate-preview.html
 
 .DS_Store
 __pycache__/
+
+# local test clones made from this template
+dataset-smoke-test/

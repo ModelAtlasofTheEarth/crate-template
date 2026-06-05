@@ -1,7 +1,7 @@
 # When an "Add / edit metadata" issue is opened/edited, apply it to the crate. The issue is one
 # generic entity editor — it edits the root by default, or a specific folder/file you pick. Thin
 # caller; logic is in the toolkit's reusable workflow (which also comments back the equivalent
-# `mate` command).
+# `crate` command).
 name: Apply metadata edit
 
 on:
@@ -10,11 +10,11 @@ on:
 
 jobs:
   apply:
-    # Gate on the title prefix the issue form sets ("[edit] …") — blank issues are disabled
-    # (see ISSUE_TEMPLATE/config.yml) so every issue comes from the form and carries it. The
-    # label check is a backup for repos where the `mate-edit` label happens to exist.
-    if: ${{ startsWith(github.event.issue.title, '[edit]') || contains(github.event.issue.labels.*.name, 'mate-edit') }}
-    uses: ModelAtlasofTheEarth/mate-toolkit/.github/workflows/build.yml@v0
+    # Gate on the title prefixes the two forms set ("[configure] …" / "[edit] …") — blank issues
+    # are disabled (see ISSUE_TEMPLATE/config.yml) so every issue comes from a form and carries
+    # one. The label check is a backup for repos where the `crate-edit` label happens to exist.
+    if: ${{ startsWith(github.event.issue.title, '[configure]') || startsWith(github.event.issue.title, '[edit]') || startsWith(github.event.issue.title, '[add]') || contains(github.event.issue.labels.*.name, 'crate-edit') }}
+    uses: ModelAtlasofTheEarth/crate-kit/.github/workflows/build.yml@v0
     with:
       issue_body: ${{ github.event.issue.body }}
       issue_number: ${{ github.event.issue.number }}

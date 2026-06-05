@@ -1,0 +1,59 @@
+name: Edit a data entity (a local file/folder)
+description: Edit a data entity (a local file/folder)
+title: '[edit] '
+labels:
+- crate-edit
+body:
+- type: markdown
+  attributes:
+    value: Edit metadata for one **local file or folder** in this dataset (a *data
+      entity*). Pick it above, then fill only what you want to set (blank = leave
+      as-is). On submit, an action writes it into the crate. Type-specific fields
+      and richer editing live in **Crate-O**.
+- type: input
+  id: path
+  attributes:
+    label: Which entity to edit
+    description: folder/file path; blank = the dataset root
+  validations:
+    required: false
+- type: dropdown
+  id: entity_type
+  attributes:
+    label: Type tag (optional — type-specific fields are edited in Crate-O)
+    options:
+    - (keep current)
+    - Dataset
+    - SoftwareSourceCode
+    - SoftwareApplication
+    - ImageObject
+    - CreativeWork
+  validations:
+    required: false
+- type: input
+  id: ent_name
+  attributes:
+    label: Name
+  validations:
+    required: false
+- type: textarea
+  id: ent_description
+  attributes:
+    label: Description
+  validations:
+    required: false
+- type: input
+  id: ent_keywords
+  attributes:
+    label: Keywords
+    description: Comma-separated.
+  validations:
+    required: false
+- type: textarea
+  id: ent_author
+  attributes:
+    label: Author(s) — ORCID iD or 'Family, Given'
+    description: 'One per line: an ORCID iD (e.g. 0000-0002-1270-4377), or "Family,
+      Given".'
+  validations:
+    required: false

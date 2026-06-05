@@ -1,0 +1,51 @@
+name: Configure dataset (the whole crate)
+description: Configure dataset (the whole crate)
+title: '[configure] '
+labels:
+- crate-edit
+body:
+- type: markdown
+  attributes:
+    value: Configure the dataset as a whole — title, description, license, creators.
+      On submit, an action writes these onto the crate's **root** entity (`ro-crate-metadata.json`,
+      the single source of truth). **Edit the crate afterwards (CLI / Crate-O), not
+      by reopening this issue.**
+- type: input
+  id: title
+  attributes:
+    label: Title
+  validations:
+    required: false
+- type: textarea
+  id: description
+  attributes:
+    label: Short description
+  validations:
+    required: false
+- type: input
+  id: license
+  attributes:
+    label: License (SPDX id or URL)
+  validations:
+    required: false
+- type: textarea
+  id: creators
+  attributes:
+    label: Creator(s) — ORCID iD or 'Family, Given'
+    description: 'One per line: an ORCID iD (e.g. 0000-0002-1270-4377), or "Family,
+      Given".'
+  validations:
+    required: false
+- type: input
+  id: keywords
+  attributes:
+    label: Keywords
+    description: Comma-separated.
+  validations:
+    required: false
+- type: input
+  id: publication
+  attributes:
+    label: Related publication (DOI)
+  validations:
+    required: false

@@ -1,0 +1,41 @@
+name: Add a contextual entity (a remote reference)
+description: Add a contextual entity (a remote reference)
+title: '[add] '
+labels:
+- crate-edit
+body:
+- type: markdown
+  attributes:
+    value: Add a **remote** thing this dataset points to (a *contextual entity*) —
+      a person, a publication, the software you used, a funder, or large data hosted
+      elsewhere — by its identifier (DOI / ORCID / ROR / URL). An action mints it
+      in the crate, links it to the dataset, and `enrich` fills in the details. *(Local
+      things — files/folders — are data entities; use the other forms for those.)*
+- type: dropdown
+  id: ctx_kind
+  attributes:
+    label: What are you adding?
+    options:
+    - Creator / author (a person)
+    - Publication (article / preprint)
+    - Software used
+    - Funder / organisation
+    - Remote data payload (large data hosted elsewhere)
+  validations:
+    required: true
+- type: input
+  id: ctx_ref
+  attributes:
+    label: Reference (DOI / ORCID / ROR / URL)
+    description: Creator / author (a person) → ORCID iD, e.g. 0000-0002-1825-0097;
+      Publication (article / preprint) → DOI, e.g. 10.1038/s41586-020-2649-2; Software
+      used → DOI or homepage URL; Funder / organisation → ROR id or URL; Remote data
+      payload (large data hosted elsewhere) → DOI or URL (Zenodo, NCI, …)
+  validations:
+    required: true
+- type: input
+  id: ctx_name
+  attributes:
+    label: Name (optional — otherwise filled by enrich)
+  validations:
+    required: false

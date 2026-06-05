@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  mate:
-    uses: ModelAtlasofTheEarth/mate-toolkit/.github/workflows/build.yml@v0
+  crate:
+    uses: ModelAtlasofTheEarth/crate-kit/.github/workflows/build.yml@v0
     permissions:
       contents: write
