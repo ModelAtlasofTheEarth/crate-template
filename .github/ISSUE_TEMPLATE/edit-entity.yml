@@ -12,10 +12,15 @@ body:
       an automated action writes your answers into the RO-Crate (`ro-crate-metadata.json`)
       — the single source of truth. **Edit the crate afterwards (CLI / Crate-O), not
       by reopening this issue.**
-- type: input
+- type: dropdown
   id: path
   attributes:
     label: Which entity to edit
+    options:
+    - (the dataset itself / root)
+    - _site/
+    - data/
+    - large_data/
   validations:
     required: false
 - type: dropdown
