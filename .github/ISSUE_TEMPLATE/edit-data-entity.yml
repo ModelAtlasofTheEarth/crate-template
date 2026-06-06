@@ -16,7 +16,6 @@ body:
     label: Which entity to edit
     options:
     - (the dataset itself / root)
-    - data/
   validations:
     required: false
 - type: dropdown
