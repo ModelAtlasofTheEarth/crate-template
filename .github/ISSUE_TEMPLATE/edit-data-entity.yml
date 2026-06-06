@@ -10,11 +10,13 @@ body:
       entity*). Pick it above, then fill only what you want to set (blank = leave
       as-is). On submit, an action writes it into the crate. Type-specific fields
       and richer editing live in **Crate-O**.
-- type: input
+- type: dropdown
   id: path
   attributes:
     label: Which entity to edit
-    description: folder/file path; blank = the dataset root
+    options:
+    - (the dataset itself / root)
+    - data/
   validations:
     required: false
 - type: dropdown
