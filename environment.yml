@@ -15,3 +15,4 @@ dependencies:
   - pip
   - pip:
       - "crate-kit @ git+https://github.com/ModelAtlasofTheEarth/crate-kit@v0"
+      - jmespath
