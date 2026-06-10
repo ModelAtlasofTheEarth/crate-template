@@ -1,0 +1,61 @@
+name: Tag website content (a file's role)
+description: Tag website content (a file's role)
+title: '[tag content] '
+labels:
+- crate-edit
+body:
+- type: markdown
+  attributes:
+    value: Tag a **local file** with the role it plays on the model's website — its
+      *communicative function* (graphical abstract, model-setup diagram, figure…).
+      Pick the file and its role; an action records the role on the crate (as `additionalType`,
+      keeping the file's structural type) and stores your caption. The role decides
+      where the asset appears on the page.
+- type: dropdown
+  id: path
+  attributes:
+    label: Which entity to edit
+    options:
+    - (the dataset itself / root)
+  validations:
+    required: false
+- type: dropdown
+  id: role_term
+  attributes:
+    label: What is this file?
+    description: '- **Graphical abstract** — The single image that best summarises
+      the whole model at a glance — the hero visual.
+
+      - **Model setup diagram** — A figure depicting the model''s geometry, domain,
+      mesh, or boundary/initial conditions.
+
+      - **Simulation animation** — A time-evolving movie of the model''s state or
+      output — the simulation rendered over time.
+
+      - **Key result figure** — A figure presenting a primary scientific result of
+      the model.
+
+      - **Figure** — A supporting figure for the gallery — any model image not assigned
+      a more specific term.
+
+      - **Plain-language summary** — A non-technical summary of the model and its
+      findings for a general audience — distinct from the technical abstract.
+
+      - **Data availability statement** — A statement of what data and code the model
+      provides and where it can be obtained.'
+    options:
+    - Graphical abstract
+    - Model setup diagram
+    - Simulation animation
+    - Key result figure
+    - Figure
+    - Plain-language summary
+    - Data availability statement
+  validations:
+    required: true
+- type: textarea
+  id: role_caption
+  attributes:
+    label: Caption (short; shown with the asset)
+  validations:
+    required: false

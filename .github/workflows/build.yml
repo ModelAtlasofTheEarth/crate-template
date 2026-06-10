@@ -20,3 +20,4 @@ jobs:
     uses: ModelAtlasofTheEarth/crate-kit/.github/workflows/build.yml@v0
     permissions:
       contents: write
+      issues: write        # lets the build maintain the "📋 Model readiness" status issue
