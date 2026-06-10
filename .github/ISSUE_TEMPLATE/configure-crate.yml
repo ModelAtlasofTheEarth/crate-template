@@ -1,19 +1,20 @@
 name: Configure dataset (the whole crate)
 description: Configure dataset (the whole crate)
-title: '[configure crate] '
+title: '[configure crate] dataset metadata'
 labels:
 - crate-edit
 body:
 - type: markdown
   attributes:
     value: Configure the dataset as a whole — title, description, license, creators.
-      On submit, an action writes these onto the crate's **root** entity (`ro-crate-metadata.json`,
-      the single source of truth). **Edit the crate afterwards (CLI / Crate-O), not
-      by reopening this issue.**
+      *(You can leave the issue title above as-is — it's just a marker; the dataset's
+      title is the field below.)* On submit, an action writes these onto the crate's
+      **root** entity (`ro-crate-metadata.json`, the single source of truth). **Edit
+      the crate afterwards (CLI / Crate-O), not by reopening this issue.**
 - type: input
   id: title
   attributes:
-    label: Title
+    label: Dataset title (the human-readable name, not the repo slug)
   validations:
     required: false
 - type: textarea
@@ -22,10 +23,20 @@ body:
     label: Short description
   validations:
     required: false
-- type: input
+- type: dropdown
   id: license
   attributes:
-    label: License (SPDX id or URL)
+    label: License
+    options:
+    - CC-BY-4.0
+    - CC-BY-SA-4.0
+    - CC0-1.0
+    - Apache-2.0
+    - MIT
+    - GPL-3.0
+    - LGPL-3.0
+    - MPL-2.0
+    - (other URL)
   validations:
     required: false
 - type: textarea

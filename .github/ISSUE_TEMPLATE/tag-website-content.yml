@@ -1,6 +1,6 @@
 name: Tag website content (a file's role)
 description: Tag website content (a file's role)
-title: '[tag content] '
+title: '[tag content] (the file below)'
 labels:
 - crate-edit
 body:

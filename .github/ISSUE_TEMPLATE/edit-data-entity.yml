@@ -1,6 +1,6 @@
 name: Edit a data entity (a local file/folder)
 description: Edit a data entity (a local file/folder)
-title: '[edit data] '
+title: '[edit data] (the entity selected below)'
 labels:
 - crate-edit
 body:
