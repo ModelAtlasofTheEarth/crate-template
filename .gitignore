@@ -5,3 +5,5 @@ ro-crate-preview.html
 
 .DS_Store
 __pycache__/
+# pixi's local env dir (the manifest+lock are tracked; the env itself is not)
+.pixi/

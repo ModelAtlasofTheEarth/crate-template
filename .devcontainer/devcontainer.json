@@ -1,13 +1,13 @@
 {
   "name": "Crate template (crate-kit)",
-  "image": "mcr.microsoft.com/devcontainers/miniconda:3",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  // Build the tracked env on create (installs the crate-kit from git + quarto), and make
-  // new terminals open in it. Same environment.yml used locally and in CI — one definition.
-  "postCreateCommand": "conda env create -f environment.yml || conda env update -f environment.yml; grep -q 'conda activate crate-kit' ~/.bashrc || echo 'conda activate crate-kit' >> ~/.bashrc",
-  "postAttachCommand": "echo '\\n  Dataset crate ready. Try:\\n    crate build .      # scan the repo into the crate\\n    crate enrich .     # resolve ORCIDs / DOIs\\n    crate validate .   # check it\\n    crate render . -o _site\\n'",
+  // Install pixi + the locked env on create. Same pixi.toml/pixi.lock used locally and in CI —
+  // one definition, reproducible everywhere. `pixi shell` drops you into the env.
+  "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | bash && ~/.pixi/bin/pixi install",
+  "postAttachCommand": "echo '\\n  Dataset crate ready. Try:\\n    pixi shell         # enter the env (then use `crate` directly)\\n    crate build .      # scan the repo into the crate\\n    crate enrich .     # resolve ORCIDs / DOIs\\n    crate validate .   # check it\\n    crate render . -o _site\\n'",
   "customizations": {
     "vscode": {
       "extensions": ["ms-python.python"]

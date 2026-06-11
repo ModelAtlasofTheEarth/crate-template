@@ -3,4 +3,6 @@
 .github/
 .devcontainer/
 .mate/
-environment.yml
+pixi.toml
+pixi.lock
+.pixi/

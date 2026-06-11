@@ -1,0 +1,32 @@
+# The dataset's tracked environment — SAME manifest used locally and in CI (the reusable
+# workflow sets it up via prefix-dev/setup-pixi), so behaviour is identical. `pixi.lock` pins
+# every package (incl. the exact crate-kit commit the `v0` tag resolved to at lock time) —
+# a reproducible snapshot, which is what a published/archived model wants.
+#
+# While a repo is in ACTIVE development the CI workflow rides the MOVING v0 tag instead
+# (it force-reinstalls the engine each run); freezing to the lockfile is then just deleting
+# that step. Locally:
+#
+#   pixi run crate build .        # or: pixi shell, then use `crate` directly
+#   pixi run render
+#
+# For local dev against an engine checkout: pixi run pip install -e ../crate-kit
+[workspace]
+name = "crate"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64", "osx-64"]
+
+[dependencies]
+python = "3.11.*"
+quarto = "*"
+pip = "*"
+
+[pypi-dependencies]
+crate-kit = { git = "https://github.com/ModelAtlasofTheEarth/crate-kit", tag = "v0" }
+
+[tasks]
+build = "crate build ."
+validate = "crate validate ."
+sync = "crate sync ."
+render = "crate render . -o _site"
+readiness = "crate readiness ."

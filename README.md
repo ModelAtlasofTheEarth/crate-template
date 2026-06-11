@@ -38,7 +38,8 @@ crate and comments back the equivalent `crate …` command.
 ## Local use (optional)
 
 ```bash
-conda env create -f environment.yml && conda activate crate-kit
+# install pixi once (https://pixi.sh), then — from the repo root:
+pixi shell           # locked env from pixi.toml/pixi.lock (same one CI uses)
 crate seed --name "My dataset" --license CC-BY-4.0 --author 0000-0002-1825-0097
 crate build .        # scan repo -> crate
 crate enrich .       # resolve ORCIDs / DOIs
