@@ -29,7 +29,7 @@ crate and comments back the equivalent `crate …` command.
 
 - **Add data by just adding files** (start with `data/`). Every push, `crate build` mirrors the
   filesystem into the crate as data entities — automatically.
-- **The crate is the source of truth.** There's no seed file; the three forms (and the `crate` CLI,
+- **The crate is the source of truth.** There's no seed file; the four forms (and the `crate` CLI,
   or [Crate-O](https://github.com/Language-Research-Technology/crate-o)) edit it in place.
 - **Enrich** resolves the DOIs / ORCIDs you reference (names, titles, authors…), best-effort.
 - The published page is a **generated projection** of the crate — don't hand-edit the crate's

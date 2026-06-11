@@ -22,14 +22,13 @@ body:
   id: entity_type
   attributes:
     label: Type tag
-    description: Optional. *Source code* = your model's own code/scripts in this repo.
-      *Application* = a packaged tool/solver you used (often better added via 'Add
-      a reference'). Picking a type unlocks its type-specific fields on a dedicated
-      form.
+    description: Optional. *Source code* = your own code/scripts in this repo. *Application*
+      = a packaged tool/solver you used (often better added via 'Add a reference').
+      Picking a type unlocks its type-specific fields on a dedicated form.
     options:
     - (keep current)
     - Dataset
-    - Software source code (your model's code / scripts)
+    - Software source code (your code / scripts in this repo)
     - Software application (a packaged tool / solver you used)
     - Image / figure
     - Other (generic creative work)

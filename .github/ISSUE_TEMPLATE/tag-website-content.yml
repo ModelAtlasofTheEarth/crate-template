@@ -6,9 +6,9 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Tag a **local file** with the role it plays on the model's website — its
-      *communicative function* (graphical abstract, model-setup diagram, figure…).
-      Pick the file and its role; an action records the role on the crate (as `additionalType`,
+    value: Tag a **local file** with the role it plays on this record's web page —
+      its *communicative function* (graphical abstract, setup diagram, figure…). Pick
+      the file and its role; an action records the role on the crate (as `additionalType`,
       keeping the file's structural type) and stores your caption. The role decides
       where the asset appears on the page.
 - type: dropdown
@@ -24,29 +24,29 @@ body:
   attributes:
     label: What is this file?
     description: '- **Graphical abstract** — The single image that best summarises
-      the whole model at a glance — the hero visual.
+      the whole work at a glance — the hero visual.
 
-      - **Model setup diagram** — A figure depicting the model''s geometry, domain,
-      mesh, or boundary/initial conditions.
+      - **Setup diagram** — A figure depicting how the work was set up — geometry,
+      domain, configuration, or initial/boundary conditions.
 
-      - **Simulation animation** — A time-evolving movie of the model''s state or
-      output — the simulation rendered over time.
+      - **Process animation** — A time-evolving movie of a process, simulation, or
+      system rendered over time.
 
       - **Key result figure** — A figure presenting a primary scientific result of
-      the model.
+      the work.
 
-      - **Figure** — A supporting figure for the gallery — any model image not assigned
+      - **Figure** — A supporting figure for the gallery — any image not assigned
       a more specific term.
 
-      - **Plain-language summary** — A non-technical summary of the model and its
-      findings for a general audience — distinct from the technical abstract.
+      - **Plain-language summary** — A non-technical summary of the work and its findings
+      for a general audience — distinct from the technical abstract.
 
-      - **Data availability statement** — A statement of what data and code the model
-      provides and where it can be obtained.'
+      - **Data availability statement** — A statement of what data and code are provided
+      and where they can be obtained.'
     options:
     - Graphical abstract
-    - Model setup diagram
-    - Simulation animation
+    - Setup diagram
+    - Process animation
     - Key result figure
     - Figure
     - Plain-language summary
