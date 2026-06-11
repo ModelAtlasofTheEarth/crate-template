@@ -6,11 +6,16 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Tag a **local file** with the role it plays on this record's web page —
-      its *communicative function* (graphical abstract, setup diagram, figure…). Pick
-      the file and its role; an action records the role on the crate (as `additionalType`,
-      keeping the file's structural type) and stores your caption. The role decides
+    value: 'Tag a **local file** with the role it plays on this record''s web page
+      — its *communicative function* (graphical abstract, setup diagram, figure…).
+      Pick the file and its role; an action records the role on the crate (as `additionalType`,
+      keeping the file''s structural type) and stores your caption. The role decides
       where the asset appears on the page.
+
+
+      > **Where is it?** *In this repository* → it''s a **data entity** (use *Edit
+      a data entity*, or its typed forms). *Hosted elsewhere* → it''s a **reference**
+      (use *Add a contextual entity*).'
 - type: dropdown
   id: path
   attributes:

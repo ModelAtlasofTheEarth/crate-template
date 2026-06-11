@@ -6,11 +6,16 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Configure the dataset as a whole — title, description, license, creators.
-      *(You can leave the issue title above as-is — it's just a marker; the dataset's
-      title is the field below.)* On submit, an action writes these onto the crate's
+    value: 'Configure the dataset as a whole — title, description, license, creators.
+      *(You can leave the issue title above as-is — it''s just a marker; the dataset''s
+      title is the field below.)* On submit, an action writes these onto the crate''s
       **root** entity (`ro-crate-metadata.json`, the single source of truth). **Edit
       the crate afterwards (CLI / Crate-O), not by reopening this issue.**
+
+
+      > **Where is it?** *In this repository* → it''s a **data entity** (use *Edit
+      a data entity*, or its typed forms). *Hosted elsewhere* → it''s a **reference**
+      (use *Add a contextual entity*).'
 - type: input
   id: title
   attributes:

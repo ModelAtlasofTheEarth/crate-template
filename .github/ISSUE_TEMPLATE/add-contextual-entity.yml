@@ -6,11 +6,15 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: Add a **remote** thing this dataset points to (a *contextual entity*) —
-      a person, a publication, the software you used, a funder, or large data hosted
-      elsewhere — by its identifier (DOI / ORCID / ROR / URL). An action mints it
-      in the crate, links it to the dataset, and `enrich` fills in the details. *(Local
-      things — files/folders — are data entities; use the other forms for those.)*
+    value: 'Add a thing this dataset points to (a *contextual entity*) — a person,
+      a publication, the software you used, a funder, or large data hosted elsewhere
+      — by its identifier (DOI / ORCID / ROR / URL). An action mints it in the crate,
+      links it to the dataset, and `enrich` fills in the details.
+
+
+      > **Where is it?** *In this repository* → it''s a **data entity** (use *Edit
+      a data entity*, or its typed forms). *Hosted elsewhere* → it''s a **reference**
+      (use *Add a contextual entity*).'
 - type: dropdown
   id: ctx_kind
   attributes:
